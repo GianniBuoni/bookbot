@@ -1,7 +1,5 @@
-from os import path
+import sys
 from lib.helpers import count_char, count_words
-
-file_path = path.join("books", "frankenstein.txt")
 
 def main(input_file):
     with open(input_file) as f:
@@ -16,4 +14,5 @@ def main(input_file):
         for letter in char_count:
             print(f"The letter '{letter["char"]}' was found '{letter["count"]}' times.")
 
-main(file_path)
+if __name__ == "__main__":
+    main(sys.argv[1])
